@@ -1,0 +1,137 @@
+
+#pp-canvas {
+  position: relative;
+  border: 1px solid lightblue;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+
+}
+
+#currentColorDisplay {
+  position: absolute;
+  top: 5px;
+  width: 140px;
+  height: 30px;
+  border: 5px solid pink;
+  border-radius: 5px;
+  font-size: 25px;
+  right: 20px;
+  box-shadow: -2.2px 1px 1px #888888;
+}
+
+#currentColorSquare {
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  width: 30px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+#canvas { /*this is the main canvas grid containing 10x10 squares*/
+  margin:auto;
+  position: fixed;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  cursor: pointer;
+
+
+}
+
+/*this has 10x10 copies of it and is contained within 'canvas'*/
+.smallSquare {
+  border: 1px solid black;
+  width: 18px;
+  height: 18px; /*to account for a 1px border we -2 from H&W*/
+  float: left;
+  transition-property: background-color;
+  transition-duration: 0.7s;
+}
+
+#color-swatch {
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: grey;
+  width: 120px;
+  height: 450px;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  cursor: crosshair;
+}
+
+.pallete {
+  border: 1px solid black;
+  width: 18px;
+  height: 18px;
+  float: left;
+}
+
+
+#eraseBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: orange;
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 365px;
+  left: 40px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: -2px 1px 1px #888888;
+  right: 10px;
+}
+#eraseBtn:hover {
+  border: 3px solid black;
+
+
+}
+
+#clearBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: orange;
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 400px;
+  left: 40px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: -2px 1px 1px #888888;
+  right: 10px;
+}
+
+#clearBtn:hover {
+  border: 3px solid black;
+
+
+}
+
+#fillBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: orange;
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 435px;
+  left: 40px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: -2px 1px 1px #888888;
+  right: 10px;
+}
+
+#fillBtn:hover {
+  border: 3px solid black;
+}
