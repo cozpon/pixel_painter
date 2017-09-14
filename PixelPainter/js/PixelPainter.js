@@ -1,18 +1,16 @@
 var PixelPainter = (function(h) {
+  var currentColor = colorGenerator.randomColor();
+  var activeDraw = false;
+
   var mainDiv = document.getElementById("pp-canvas");
   var canvasDiv = document.createElement("div");
   var swatchDiv = document.createElement("div");
-
   var currentColorDisplayDiv = document.createElement("div");
   var currentColorDiv = document.createElement("div");
-
-  var currentColor = colorGenerator.randomColor();
-
   var eraseBtnDiv = document.createElement("div");
-
   var clearBtnDiv = document.createElement("div");
-
   var fillBtnDiv = document.createElement("div");
+
 
   // creates main canvas area
   canvasDiv.id = "canvas";
@@ -42,7 +40,6 @@ var PixelPainter = (function(h) {
   /*change the bgc of a canvas square when clicked to currentColor*/
   /*drag functionality is here through multiple eventHandlers*/
   var squares = document.querySelectorAll(".smallSquare");
-  var activeDraw = false;
   for (var i = 0; i < squares.length; i++) {
 
     squares[i].addEventListener('mousedown', function() {
@@ -93,8 +90,8 @@ var PixelPainter = (function(h) {
   clearBtnDiv.innerHTML = "Clear";
   clearBtnDiv.addEventListener("click", function() {
     for (var i = 0; i < squares.length; i++) {
-      if (squares[i].style.backgroundColor !== 'white') {
-        squares[i].style.backgroundColor = 'white';
+      if (squares[i].style.backgroundColor !== null) {
+        squares[i].style.backgroundColor = null;
       }
     }
   });
@@ -104,12 +101,12 @@ var PixelPainter = (function(h) {
   mainDiv.appendChild(fillBtnDiv);
 
   /*create and append pallete squares to the color swatch*/
-  var b = document.getElementById("color-swatch");
+  var colorSwatch = document.getElementById("color-swatch");
 
   for (var i = 0; i < 90; i++) {
       var palleteDiv = document.createElement("div");
       palleteDiv.setAttribute('class', "pallete");
-      b.appendChild(palleteDiv);
+      colorSwatch.appendChild(palleteDiv);
     }//end for
 
   /*upon page load, all 90 pallete squares start as random colors*/
@@ -129,6 +126,7 @@ var PixelPainter = (function(h) {
           currentColor = event.currentTarget.style.backgroundColor;
           currentColorDiv.style.backgroundColor = currentColor;
           currentColorDisplayDiv.style.borderColor = currentColor;
+          console.log(currentColor);
 
 
       });

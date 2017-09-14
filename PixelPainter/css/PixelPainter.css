@@ -1,10 +1,13 @@
-
+body{
+  background-color: lightgrey
+}
 #pp-canvas {
   position: relative;
   border: 1px solid lightblue;
   width: 600px;
   height: 600px;
   margin: 0 auto;
+  background-color: white;
 
 }
 
